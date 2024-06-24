@@ -1,3 +1,7 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
     background: url(../../public/image/pexels-esan-2085998.jpg) no-repeat top rgba(255, 254, 254, 0.537);
     background-size: cover;

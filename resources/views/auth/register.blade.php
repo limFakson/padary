@@ -2,10 +2,11 @@
 <div>
     <div class="flex justify-center items-center w-full h-full">
         <div class="morpheme">
-            <div class="w-[25rem] p-4 pl-6">
-                <form action="" method="post" class="grid">
+            <div class="w-[35rem] p-4 pl-6">
+                <h2 class="text-center font-bold text-2xl">Holla, Welcome to Padary</h2>
+                <form action="{{ route('reg') }}" method="post" class="grid">
                     <div class="personal justify-self-start">
-                        <label for="fullname">Fullname:
+                        <label for="fullname" class="text-lg font-semibold">Fullname:
                             <input type="text" name="fullname"></label> <br> <br>
                         <label for="email">Email:
                             <input type="email" name="email"></label> <br> <br>
