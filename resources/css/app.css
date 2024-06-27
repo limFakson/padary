@@ -3,8 +3,50 @@
 }
 
 body {
-    background: url(../../public/image/pexels-esan-2085998.jpg) no-repeat top rgba(255, 254, 254, 0.537);
+    background-color: #FEF6EE;
     background-size: cover;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle span {
+    display: block;
+    position: relative;
+}
+
+.small {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.large {
+    width: 19rem;
+    height: 18rem;
+    border-radius: 50%;
+}
+
+.orange {
+    background-color: #FF9800;
+}
+
+.blue {
+    background-color: #2196F3;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.red {
+    background-color: #F44336;
 }
 
 .morpheme {
