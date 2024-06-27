@@ -1,5 +1,5 @@
 @extends('index')
-<div>
+<div class="h-svh w-full fixed">
     <div class="circle">
         <span class="large green"></span>
         <span class="small blue"></span>
@@ -7,7 +7,7 @@
         <span class="large red"></span>
     </div>
     <div class="flex justify-center items-center w-full h-full">
-        <div class="drop-shadow">
+        <div class="drop-shadow w-[35rem] h-[41rem]">
             <div class="w-[35rem] p-4 pl-6">
                 <h2 class="text-center font-bold text-2xl">Holla, Welcome to Padary</h2>
                 <form action="/reg" method="POST" class="grid">

@@ -7,24 +7,31 @@ body {
     background-size: cover;
 }
 
+.drop-shadow {
+    border: 1px solid #000;
+    border-radius: 13px;
+    box-shadow: 0 0 1px black;
+}
+
 .circle {
     width: 100%;
     height: 100%;
     position: absolute;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .circle span {
     display: block;
-    position: relative;
+    position: absolute;
 }
 
 .small {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
+    top: 4rem;
+    right: 18rem;
+
 }
 
 .large {
@@ -43,10 +50,14 @@ body {
 
 .green {
     background-color: #4CAF50;
+    top: -5rem;
+    left: -5rem;
 }
 
 .red {
     background-color: #F44336;
+    bottom: -5rem;
+    right: -5rem;
 }
 
 .morpheme {
