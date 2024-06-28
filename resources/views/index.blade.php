@@ -7,6 +7,7 @@
     <title>Padary</title>
     {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
     @vite('resources/css/app.css')
+    <script src="https://kit.fontawesome.com/43b5f69107.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
