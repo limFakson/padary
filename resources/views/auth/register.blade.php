@@ -25,10 +25,11 @@
                         <input class="custom input pl-6 pr-2" type="text" name="fullname" placeholder="Username or Email Address">
                     </div>
                     <div class="password input custom justify-self-center flex justify-center items-center pr-4">
-                        <input class="w-full h-full pl-6 pr-2" type="password" name="password" placeholder="Password">
-                        <input type="checkbox" name="trigger" class="trigger">
-                        <i class="cursor-pointer fa-solid fa-eye-slash hide"></i>
-                        <i class="cursor-pointer fa-solid fa-eye reveal"></i>
+                        <input class="w-full h-full pl-6 pr-2" type="password" name="password" placeholder="Password" id="password">
+                        <input type="checkbox" name="trigger" class="trigger-hide relative" id="hide" hidden>
+                        <i class="cursor-pointer fa-solid fa-eye-slash hide eye" onclick="document.getElementById('hide').checked = true; document.getElementById('reveal').checked=false; hide()"></i>
+                        <input type="checkbox" name="trigger" class="trigger-reveal relative" id="reveal" hidden checked>
+                        <i class="cursor-pointer fa-solid fa-eye reveal eye" onclick="document.getElementById('hide').checked = false; document.getElementById('reveal').checked=true; reveal()"></i>
                     </div>
                     <button class="submit w-[23.2rem] h-[3rem] justify-self-center mt-3 rounded-[10px] bg-[#2B2D40]" type="submit">Login</button>
                 </form>
@@ -36,3 +37,18 @@
         </div>
     </div>
 </div>
+
+{{-- @push('scripts') --}}
+<script>
+    const password = document.getElementById("password");
+    function hide(){
+        if (document.getElementById("hide").checked === true) {
+            password.type = "text";
+        }
+    }
+    function reveal(){
+        if (document.getElementById("hide").checked === false) {
+            password.type = "password";
+        }
+    }
+</script>

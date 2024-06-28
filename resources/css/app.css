@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     font-family: Inter;
 }
@@ -114,16 +118,16 @@ input {
     font-weight: 500;
 }
 
-.reveal {
-    display: none;
+.eye {
+    transition: ease-in-out .2s;
 }
 
-.trigger:checked+.hide {
+.trigger-hide:checked+.hide {
     display: none !important;
 }
 
-.trigger:checked+.reveal {
-    display: block !important;
+.trigger-reveal:checked~.reveal {
+    display: none !important;
 }
 
 .morpheme {
@@ -134,7 +138,3 @@ input {
     -webkit-backdrop-filter: blur(4.5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
