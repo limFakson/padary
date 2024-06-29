@@ -13,12 +13,34 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function userCreate(Request $request){
-        $user = User::create([
-            'name'=>$request['fullname'],
-            'email'=>$request['email'],
-            'password'=>bcrypt($request['password'])
-        ]);
-        return back();
+    public function checkUser(array $user)
+    {
+        $userExists = User::where($user)->exists();
+
+        if ($userExists) {
+            return back()->with('message', 'User already exists.');
+        }
+
+        return null;
     }
+
+    public function userCreate(Request $request)
+    {
+        $user = [
+            'name' => $request->input('username'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+        ];
+
+        $checkUser = $this->checkUser(['email' => $user['email']]);
+
+        if ($checkUser) {
+            return $checkUser;
+        }
+
+        User::create($user);
+
+        return back()->with('message', 'User created successfully.');
+    }
+
 }

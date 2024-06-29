@@ -87,8 +87,12 @@ input {
     outline: none;
 }
 
+.a {
+    text-decoration: underline;
+}
+
 .custom {
-    margin: 8px;
+    margin: 8px 5px;
     width: 23rem;
     height: 3rem;
     border-radius: 10px;
@@ -128,6 +132,21 @@ input {
 
 .trigger-reveal:checked~.reveal {
     display: none !important;
+}
+
+.obutton {
+    border: #2B2D40 1px solid;
+    border-radius: 8px;
+    width: 6rem;
+    height: 3.4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.obutton img {
+    max-width: 5.5rem;
 }
 
 .morpheme {

@@ -14,7 +14,8 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $credentials = $request->valudate([
-            'email'=> ['required']
+            'email'=> ['required', 'email'],
+            'password'=>['required']
         ]);
     }
 }
