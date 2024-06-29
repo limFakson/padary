@@ -20,7 +20,8 @@
                     <h2 class="text-2xl font-bold mb-1">Login</h2>
                     <h4 class="text-lg font-normal">Login to continue</h4>
                 </div>
-                <form action="/reg" method="GET" class="grid">
+                <form action="/create" method="POST" class="grid">
+                    @csrf
                     <div class="personal justify-self-center">
                         <input class="custom input pl-6 pr-2" type="text" name="fullname" placeholder="Username or Email Address">
                     </div>
@@ -41,6 +42,14 @@
 {{-- @push('scripts') --}}
 <script>
     const password = document.getElementById("password");
+    const submit = document.querySelector(".submit")
+    submit.addEventListener('click', function(e) {
+        // e.preventDefault()
+        if(password.value.length < 6){
+            document.getElementsByClassName('password').style.display == "none"
+            console.log("6letters")
+        }
+    });
     function hide(){
         if (document.getElementById("hide").checked === true) {
             password.type = "text";

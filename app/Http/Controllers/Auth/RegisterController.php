@@ -13,13 +13,12 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function create(array $data){
+    public function userCreate(Request $request){
         $user = User::create([
-            'name'=>$data['Fullname'],
-            'email'=>$data['email'],
-            'password'=>bcrypt($data['password'])
+            'name'=>$request['fullname'],
+            'email'=>$request['email'],
+            'password'=>bcrypt($request['password'])
         ]);
-
-        return $user;
+        return back();
     }
 }

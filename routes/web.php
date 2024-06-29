@@ -21,5 +21,5 @@ Route::get('/form', function(){
     return view('form');
 });
 
-Route::post('/reg', [RegisterController::class, 'create']);
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/create', [RegisterController::class, 'userCreate']);
