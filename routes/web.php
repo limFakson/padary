@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::post('/create', [RegisterController::class, 'userCreate']);
 
 Route::post('/authenticate', [LoginController::class, 'authenticate']);
 Route::resource('/login', LoginController::class);
+Route::resource('home', HomeController::class);
