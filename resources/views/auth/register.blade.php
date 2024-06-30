@@ -6,14 +6,16 @@
         <span class="small orange"></span>
         <span class="large red"></span>
     </div>
+    <div class="message center top-4 relative">
+        @if(session('message'))
+            <div id="alert-message" class="alert bg-[#9ed2a0] border-[#4CAF50] border text-center align-middle content-center w-[33rem] h-10 alert-success text-lg text-[#1d3a1e]">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
     <div class="flex justify-center items-center w-full h-full">
         <div class="drop-shadow w-[30rem] extend h-[44rem] bg-[#FEF6EE]">
             <div class="p-4 pl-6">
-                @if(session('message'))
-                    <div class="alert alert-success">
-                        {{ session('message') }}
-                    </div>
-                @endif
                 <div class="form-header flex gap-4 justify-center items-center py-2">
                     <span class="box"></span>
                     <div class="logo block space-y-0">
@@ -66,7 +68,7 @@
 
 {{-- @push('scripts') --}}
 <script>
-    const submit = document.querySelector(".submit")
+    const submitBtn = document.querySelector(".submit")
 
     document.getElementById('password').addEventListener('focusout', function() {
         const password = this.value;
@@ -79,19 +81,16 @@
         if (password.length < 6) {
             errorMessage.textContent = "Password must be at least 6 characters.";
             passwordField.style.border = "1px solid red";
-            submit.addEventListener('click', function(e){
-                e.preventDefault()
-            })
+            submitBtn.disabled = true;
         } else if (!strongPasswordRegex.test(password)) {
             errorMessage.textContent = "Password must contain at least one uppercase letter, one number, and one special character.";
             passwordField.style.border = "1px solid red";
             document.querySelector('.extend').style.height = "45rem"
-            submit.addEventListener('click', function(e){
-                e.preventDefault()
-            })
+        submitBtn.disabled = true;
         } else {
             errorMessage.textContent = "";
             passwordField.style.border = "";
+            submitBtn.disabled = false;
         }
     });
 
@@ -105,4 +104,13 @@
             password.type = "password";
         }
     }
+
+    setTimeout(() => {
+        const alert = document.getElementById('alert-message');
+        if (alert) {
+            alert.style.transition = "ease-in-out 3000s"
+            alert.style.display = 'none';
+        }
+    }, 1500);
 </script>
+

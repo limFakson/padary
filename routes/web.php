@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/form', function(){
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/create', [RegisterController::class, 'userCreate']);
+
+Route::resource('/login', LoginController::class);

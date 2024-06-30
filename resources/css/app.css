@@ -8,6 +8,12 @@
     font-family: Inter;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     background-color: #FEF6EE;
     background-size: cover;
@@ -147,6 +153,11 @@ input {
 
 .obutton img {
     max-width: 5.5rem;
+}
+
+.alert {
+    transition: linear .2s;
+    transition: ease-in-out .3s;
 }
 
 .morpheme {

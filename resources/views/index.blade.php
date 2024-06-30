@@ -11,6 +11,6 @@
 </head>
 <body>
 
-    <script src="js/app.js" type="mod"></script>
+
 </body>
 </html>

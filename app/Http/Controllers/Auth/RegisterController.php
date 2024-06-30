@@ -15,10 +15,12 @@ class RegisterController extends Controller
 
     public function checkUser(array $user)
     {
-        $userExists = User::where($user)->exists();
+        $userExists = User::where('email', $user['email'])
+                        ->orWhere('name', $user['name'])
+                        ->exists();
 
         if ($userExists) {
-            return back()->with('message', 'User already exists.');
+            return redirect('/login')->with('message', 'User with this email or name already exists.');
         }
 
         return null;
@@ -32,7 +34,7 @@ class RegisterController extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
-        $checkUser = $this->checkUser(['email' => $user['email']]);
+        $checkUser = $this->checkUser($user);
 
         if ($checkUser) {
             return $checkUser;
@@ -40,7 +42,6 @@ class RegisterController extends Controller
 
         User::create($user);
 
-        return back()->with('message', 'User created successfully.');
+        return redirect('/login')->with('message', 'User successfully created');
     }
-
 }
