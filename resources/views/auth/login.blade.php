@@ -27,10 +27,10 @@
                     <h2 class="text-2xl font-bold mb-1">Login</h2>
                     <h4 class="text-lg font-normal">Login to continue</h4>
                 </div>
-                <form action="/login" method="POST" class="grid">
+                <form action="/authenticate" method="POST" class="grid">
                     @csrf
                     <div class="personal justify-self-center">
-                        <input class="custom input pl-6 pr-2" type="text" name="fullname" placeholder="Username or Email Address">
+                        <input class="custom input pl-6 pr-2" type="text" name="identifier" placeholder="Username or Email Address">
                     </div>
                     <div class="password input custom justify-self-center flex justify-center items-center pr-4">
                         <input class="w-full h-full pl-6 pr-2" type="password" name="password" placeholder="Password" id="password">

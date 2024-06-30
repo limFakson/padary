@@ -25,4 +25,6 @@ Route::get('/form', function(){
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/create', [RegisterController::class, 'userCreate']);
 
+
+Route::post('/authenticate', [LoginController::class, 'authenticate']);
 Route::resource('/login', LoginController::class);

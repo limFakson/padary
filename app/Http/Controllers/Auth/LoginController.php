@@ -14,6 +14,15 @@ class LoginController extends Controller
     }
 
     public function authenticate(Request $request){
-        $credentials = $request->
+        $credentials = $request->input('identifier');
+        $password = $request->input('password');
+
+        if (Auth::attempt(['name' => $credentials, 'password' => $password]) || Auth::attempt(['email' => $credentials, 'password' => $password])){
+
+            $request->session()->regenerate();
+            return redirect('/login')->with('message', 'Login Sucessfull');
+        }
+
+        return back()->with('message', 'The provided credentials do not match our records.');
     }
 }
